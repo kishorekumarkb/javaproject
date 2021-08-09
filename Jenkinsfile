@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
 
@@ -9,12 +8,5 @@ pipeline {
                 sh 'ls'
             }
         }
-    stages {
-        stage('readpomfile') {
-            steps {
-                readMavenPom file: 'pom.xml'
-                 
-            }
-        }
     }
-    }
+}
