@@ -12,6 +12,7 @@ pipeline {
     }
     stage('readpomfile') {
         readMavenPom file: 'pom.xml'
+        sh 'cat pom.xml'
    }
 }
 
