@@ -13,5 +13,12 @@ agent any
                sh ' mvn clean install'
               }
           }
+        stage('Docker build') {
+             steps {
+               sh 'echo "docker build..."'
+               sh ' docker build -t kishore:${env.BUILD_ID}'
+              }
+          }
     }
 }
+
