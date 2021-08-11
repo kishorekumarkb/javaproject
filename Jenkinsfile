@@ -17,6 +17,7 @@ agent any
              steps {
                sh 'echo "docker build..."'
                sh ' docker build -t kishore:${env.BUILD_ID}'
+               sh 'docker images'
               }
           }
     }
