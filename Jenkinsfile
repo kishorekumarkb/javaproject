@@ -1,4 +1,3 @@
-pipeline {
     agent any
 
     stages {
@@ -6,8 +5,13 @@ pipeline {
             steps {
                  checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/kishorekumarkb/javaproject.git']]])
                 sh 'ls'
-                sh ' mvn clean install'
             }
         }
+       stage('mvn Build') {
+             steps {
+               sh 'echo "mvn build..."'
+               sh ' mvn clean install'
+              }
+          }
     }
 }
