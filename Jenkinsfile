@@ -17,6 +17,7 @@ agent any
              steps {
                sh 'echo "docker build..."'
                sh ' docker build -t kishore:v2 .' 
+               sh 'docker push kishorekumarkb/kishore:v2 '
                sh 'docker images'
               }
           }
