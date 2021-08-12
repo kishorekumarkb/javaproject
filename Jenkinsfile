@@ -20,10 +20,10 @@ agent any
                 // sh 'docker tag kishore1:v4 ${user}/kishore1:v4 https://registry.hub.docker.com '
                withCredentials([usernamePassword(credentialsId: 'kishorehub', passwordVariable: 'pw', usernameVariable: 'user')]) {
                  // sh 'docker tag kishore1:v4 ${user}/kishore1:v4 '
-                   sh "docker tag kishore1:v4 https://registry.hub.docker.com/${user}/kishore1:v4 "
+                   sh "docker tag kishore1:v4 registry.hub.docker.com/${user}/kishore1:v4 "
                 sh 'docker images'
                 sh "docker login -u ${user} -p ${pw} https://registry.hub.docker.com"
-                   sh "docker push https://registry.hub.docker.com/${user}/kishore1:v4"
+                   sh "docker push registry.hub.docker.com/${user}/kishore1:v4"
                sh 'docker images'
               }
           }
