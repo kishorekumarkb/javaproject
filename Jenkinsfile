@@ -16,8 +16,9 @@ agent any
         stage('Docker build') {
              steps {
                sh 'echo "docker build..."'
-               sh ' docker build -t kishore:v2 .' 
-               sh 'docker push kishorekumarkb/kishore:v2 '
+               sh ' docker build -t kishore:v3 .' 
+               sh 'docker tag image id kishorekumarkb/kishore:v3 '
+               sh 'docker push kishorekumarkb/kishore:v3 '
                sh 'docker images'
               }
           }
