@@ -18,9 +18,9 @@ agent any
                sh 'echo "docker build..."'
                sh ' docker build -t kishore1:v4 .' 
                sh 'docker tag kishore1:v4 kishorekumarkb/kishore1:v4 '
-               withCredentials([usernamePassword(credentialsId: 'kishorehub', passwordVariable: 'pw', usernameVariable: 'user')]) {
+               withCredentials([usernamePassword(credentialsId: 'kishorenexus', passwordVariable: 'pw', usernameVariable: 'user')]) {
                 sh 'docker images'
-                sh "docker login -u ${user} -p ${pw} https://registry.hub.docker.com"
+                sh "docker login -u ${user} -p ${pw} https://nexus.idea.xpaas.io"
                    sh "docker push ${user}/kishore1:v4"
                sh 'docker images'
               }
