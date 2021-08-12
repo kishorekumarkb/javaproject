@@ -7,12 +7,12 @@ agent any
                 sh 'ls'
             }
         }
-       stage('mvn Build') {
+       /* stage('mvn Build') {
              steps {
                sh 'echo "mvn build..."'
                sh ' mvn clean install'
               }
-          }
+          }*/
         stage('Docker build') {
              steps {
                sh 'echo "docker build..."'
