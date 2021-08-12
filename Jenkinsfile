@@ -16,7 +16,7 @@ agent any
         stage('Docker build') {
              steps {
                sh 'echo "docker build..."'
-               sh ' docker build -t kishore:${env.BUILD_ID}' .
+               sh ' docker build -t kishore:v2 .' 
                sh 'docker images'
               }
           }
