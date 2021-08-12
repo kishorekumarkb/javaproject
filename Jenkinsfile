@@ -19,7 +19,7 @@ agent any
                sh ' docker build -t kishore:v4 .' 
                sh 'docker tag kishore:v4 kishorekumarkb/kishore:v4 '
                withCredentials([usernamePassword(credentialsId: 'kishorehub', passwordVariable: 'pw', usernameVariable: 'user')]) {
-                sh "docker login -u ${user} -p ${pw} https://hub.docker.com/repository/docker/kishorekumarkb/kishore1"
+                sh 'docker login -u ${user} -p ${pw} index.docker.io'
                sh 'docker push kishorekumarkb/kishore:v4 '
                sh 'docker images'
               }
