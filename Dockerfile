@@ -1,14 +1,6 @@
-# select parent image
-FROM maven:3.6.3-jdk-8
- 
-# copy the source tree and the pom.xml to our new container
-COPY ./ ./
- 
-# package our application code
-RUN mvn clean package
-RUN chmod +x /target/*.jar
-RUN ls -ltr /target/*
-
- 
-# set the startup command to execute the jar
-CMD ["java", "-jar", "target/hello-world-3.6.0.jar" , "helloworld"]
+FROM ubuntu
+RUN apt-get update
+RUN apt-get install -y python3
+ADD hello.py /home/hello.py
+CMD ["/home/hello.py"]
+ENTRYPOINT ["python3"]
