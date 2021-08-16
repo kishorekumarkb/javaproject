@@ -11,4 +11,4 @@ RUN ls -ltr /target/*
 
  
 # set the startup command to execute the jar
-CMD ["java", "-jar", "target/hello-world-3.6.0.jar"]
+CMD ["java", "-jar", "target/hello-world-3.6.0.jar" , "helloworld"]
