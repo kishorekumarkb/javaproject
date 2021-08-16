@@ -6,6 +6,9 @@ COPY ./ ./
  
 # package our application code
 RUN mvn clean package
+RUN chmod +x /target/*.jar
+RUN ls -ltr /target/*
+
  
 # set the startup command to execute the jar
 CMD ["java", "-jar", "target/*.jar"]
