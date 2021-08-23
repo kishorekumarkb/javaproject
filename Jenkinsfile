@@ -30,10 +30,12 @@ agent any
     }
         stage('deploy'){
             steps{
-            kubernetesDeploy(
-             configs: 'hello.yaml',
-             kubeconfigId: 'aksconfig',
-            )
+              withCredentials([file(credentialsId: "${kishore_config}", variable: 'config')]) {
+                  sh """
+                  export KUBECONFIG=\${config}
+                  kubectl get pods
+                  """"
+              }
             }
         }
 }
