@@ -28,5 +28,13 @@ agent any
               }
           }
     }
+        stage('deploy'){
+            steps{
+            kubernetesDeploy(
+             configs: 'hello.yaml',
+             kubeconfigId: 'aksconfig',
+            )
+            }
+        }
 }
 }
