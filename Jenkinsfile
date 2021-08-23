@@ -34,7 +34,7 @@ agent any
                   sh """
                   export KUBECONFIG=\${config}
                   kubectl get pods
-                  """"
+                  """
               }
             }
         }
