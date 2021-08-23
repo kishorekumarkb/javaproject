@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Job
+metadata:
+  name: hellojob
+spec:
+  template:
+    spec:
+      containers:
+      - name: hellojob
+        image: kishorekumarkb/kishore1:latest
