@@ -33,7 +33,7 @@ agent any
               withCredentials([file(credentialsId: "kishore_config", variable: 'config')]) {
                   sh """
                   export KUBECONFIG=\${config}
-                  helm install myweb myweb/ --n kkk
+                  helm install myweb myweb/ --namespace=kkk
                   """
                   // kubectl create -f hello.yaml -n kkk
               }
