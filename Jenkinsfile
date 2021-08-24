@@ -33,7 +33,8 @@ agent any
               withCredentials([file(credentialsId: "kishore_config", variable: 'config')]) {
                   sh """
                   export KUBECONFIG=\${config}
-                  kubectl get pods
+                  //kubectl get pods
+                  kubectl create -f hello.yaml -n kkk
                   """
               }
             }
