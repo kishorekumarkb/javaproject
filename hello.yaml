@@ -1,21 +1,10 @@
-apiVersion: apps/v1
+apiVersion: batch/v1
 kind: Job
 metadata:
-  name: hello
+  name: pi
 spec:
-  selector:
-    matchLabels:
-      app: hello
-  replicas: 2 # tells deployment to run 2 pods matching the template
   template:
-    metadata:
-      labels:
-        app: hello
     spec:
       containers:
-      - name: hello
-        image:  kishorekumarkb/kishore1:latest
-        ports:
-        - containerPort: 80
-
-        
+      - name: pi
+        image: kishorekumarkb/kishore1:latest
