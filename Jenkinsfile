@@ -34,6 +34,7 @@ agent any
                   sh """
                   export KUBECONFIG=\${config}
                   kubectl create -f hello.yaml -n kkk
+                  kubectl create -f svc.yaml -n kkk
                   echo "pod deployed"
                   """
               }
