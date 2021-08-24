@@ -1,1 +1,11 @@
+replica:
+  replicaCount: 3
+  
+metadata:
+  name: nginx-deployment
 
+image:
+  repository: httpd:latest
+
+ports:
+  port: 80
