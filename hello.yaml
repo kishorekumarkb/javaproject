@@ -8,3 +8,4 @@ spec:
       containers:
       - name: pi
         image: kishorekumarkb/kishore1:latest
+      restartPolicy: Never
