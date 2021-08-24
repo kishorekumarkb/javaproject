@@ -30,7 +30,7 @@ agent any
     }
         stage('deploy'){
             steps{
-              withCredentials([file(credentialsId: "${kishore_config}", variable: 'config')]) {
+              withCredentials([file(credentialsId: "kishore_config", variable: 'config')]) {
                   sh """
                   export KUBECONFIG=\${config}
                   kubectl get pods
