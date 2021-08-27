@@ -31,11 +31,16 @@ agent any
         stage('deploy'){
             steps{
               withCredentials([file(credentialsId: "kishore_config", variable: 'config')]) {
-                  sh """
+                 /* sh """
                   export KUBECONFIG=\${config}
                   helm install myweb11 ./myweb/ --namespace=kkk
                   """
                   // kubectl create -f hello.yaml -n kkk
+                  */
+                  withCredentials([usernamePassword(credentialsId: 'amma', passwordVariable: 'kishore@77', usernameVariable: 'user')]) {
+                   
+                      
+                  }
               }
             }
         }
