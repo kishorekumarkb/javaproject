@@ -1,0 +1,7 @@
+apiVersion: apps/v1
+kind: ConfigMap
+metadata:
+  name: demo-configmap
+data:
+  channel.name: {{ .Values.names.channelname }}
+  channel.owner: {{ .Values.names.channelowner }}
