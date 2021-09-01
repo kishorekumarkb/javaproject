@@ -34,7 +34,7 @@ agent any
                   sh """
                   export KUBECONFIG=\${config}
                   helm install myweb22 ./myweb/ --namespace=kkk
-                  
+                  """
  
               }
             }
